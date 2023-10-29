@@ -1,5 +1,9 @@
 fn main() {
-let hello = "Здравствуйте";
+    for c in "Зд".chars() {
+        println!("{c}");
+    }
 
-let s = &hello[0..4];
+    for b in "Зд".bytes() {
+        println!("{b}");
+    }
 }
