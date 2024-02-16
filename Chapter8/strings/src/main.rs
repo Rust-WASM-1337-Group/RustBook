@@ -1,4 +1,5 @@
 fn main() {
-    let s1 = String::from("hello");
-    let h = s1[0];
+    let hello = "Здравствуйте";
+
+    let s = &hello[0..4];
 }
