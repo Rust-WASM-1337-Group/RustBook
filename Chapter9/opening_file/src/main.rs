@@ -1,10 +1,6 @@
-use std::fs;
-use std::io;
+use std::fs::File;
 
 fn main() {
-
-    fn read_username_from_file() -> Result<String, io::Error> {
-         fs::read_to_string("hello.txt")
-    }
-
+    let greeting_file = File::open("hello.txt")?;
 }
+
