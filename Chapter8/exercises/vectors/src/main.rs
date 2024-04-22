@@ -1,14 +1,9 @@
-//Given a list of integers, use a vector and return the median 
-//(when sorted, the value in the middle position) and
-//mode (the value that occurs most often; 
-//a hash map will be helpful here) of the list.
-use std::{io, collections::HashMap};
+use std::{collections::HashMap, io};
 
 fn main() {
-    // get vector size
-    println!("input the vector size:"); 
+    println!("input the vector size:");
     let mut size = String::new();
-    io::stdin().read_line(&mut size).expect("Error reading line");
+    io::stdin().read_line(&mut size).expect("Failed to read line");
 
     let size: usize = size.trim().parse().expect("Error parsing size");
 
@@ -89,4 +84,5 @@ fn mode(vector: &Vec<usize>) -> usize {
 //    mode
 //
 //}
+
 
