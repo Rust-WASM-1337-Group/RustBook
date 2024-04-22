@@ -46,14 +46,15 @@ fn mode(vector: &Vec<usize>)-> usize {
         *count+=1;
     }
 
-    println!("{:#?}", map);
-
-    // get the mode (most repeated)
+    let mut temp: usize = 0;
     for (k, v) in &map {
-        if *v >= mode {
+        if *v >= temp {
+            temp = *v;
             mode = **k;
         }
     }
 
     mode
+
 }
+
