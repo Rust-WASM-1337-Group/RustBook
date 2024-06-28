@@ -26,8 +26,21 @@ fn main() {
 
     notify(&tweet);
     notify(&article);
+    notify_2_items(&tweet, &article); 
 }
 
-pub fn notify(item: &impl Summary) {
+pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
+pub fn notify_2_items(item1: &impl Summary, item2: &impl Summary) {
+    println!("Breaking news! {}", item1.summarize());
+    println!("Breaking news! {}", item2.summarize());
+}
+
+
+
+
+
+
+
+
