@@ -27,6 +27,8 @@ fn main() {
     notify(&tweet);
     notify(&article);
     notify_2_items(&tweet, &article); 
+
+    println!("returns summarizable {}", returns_summarizable().summarize());
 }
 
 pub fn notify<T: Summary>(item: &T) {
@@ -37,10 +39,14 @@ pub fn notify_2_items(item1: &impl Summary, item2: &impl Summary) {
     println!("Breaking news! {}", item2.summarize());
 }
 
-
-
-
-
-
-
+fn returns_summarizable() -> impl Summary {
+    Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        retweet: false,
+    }
+}
 
