@@ -2,6 +2,10 @@ pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
+pub fn add_two(a: usize) -> usize {
+    a + 2
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -15,5 +19,11 @@ mod tests {
     #[test]
     fn another() {
         panic!("Make this test fail");
+    }
+
+    #[test]
+    fn it_adds_two() {
+        let result = add_two(2);
+        assert_eq!(result, 4);
     }
 }
