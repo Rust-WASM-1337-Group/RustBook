@@ -3,7 +3,11 @@ pub fn add(left: usize, right: usize) -> usize {
 }
 
 pub fn add_two(a: usize) -> usize {
-    a + 2
+    internal_adder(a, 2)
+}
+
+fn internal_adder(left: usize, right: usize) -> usize {
+    left + right
 }
 
 #[cfg(test)]
@@ -60,6 +64,12 @@ mod tests {
     #[ignore]
     fn expensive_test() {
         // code that takes an hour to run
+    }
+
+    #[test]
+    fn internal() {
+        let result = internal_adder(2, 2);
+        assert_eq!(result, 4);
     }
 
 }
